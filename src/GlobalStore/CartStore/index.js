@@ -11,7 +11,7 @@ const cart = createSlice({
     initialState,
     reducers: {
         AddToCart: (state, action) => {
-ü            action.payload.count = 1;
+            action.payload.count = 1;
             let flag = false;
             _.each(state.products, (item, index) => {
                 if (

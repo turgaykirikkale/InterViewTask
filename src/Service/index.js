@@ -1,13 +1,7 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection } from "firebase/firestore";
 import { getDocs, query, addDoc } from "firebase/firestore"
 
-
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyDDnq0he6I8RTPE3lwRxiOuadNp7XuLa3U",
     authDomain: "interviewtask-ff0b7.firebaseapp.com",
@@ -33,7 +27,7 @@ const services = {
     FetchOrderHistory: async () => {
         const snapshot = await getDocs(query(orderHistoryRef));
         const updatedData = snapshot.docs.map(doc => ({ ...doc.data() }));
-ü        return updatedData;
+        return updatedData;
     },
 
     AddOrderToHistory: (data) => {
