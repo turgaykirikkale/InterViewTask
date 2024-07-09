@@ -7,6 +7,8 @@ require Pod::Executable.execute_command('node', ['-p',
 
 platform :ios, min_ios_version_supported
 prepare_react_native_project!
+use_modular_headers!
+
 
 linkage = ENV['USE_FRAMEWORKS']
 if linkage != nil
@@ -26,6 +28,10 @@ target 'InterViewTask' do
   target 'InterViewTaskTests' do
     inherit! :complete
     # Pods for testing
+    pod 'FirebaseFirestore'
+    pod 'FirebaseCore'
+    pod 'FirebaseCoreExtension'
+    pod 'FirebaseFirestoreInternal'
   end
 
   post_install do |installer|
